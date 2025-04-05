@@ -15,6 +15,7 @@ public class HelloApplication extends Application {
         stage.initStyle(StageStyle.DECORATED);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setScene(scene);
+
         stage.show();
 
     }
