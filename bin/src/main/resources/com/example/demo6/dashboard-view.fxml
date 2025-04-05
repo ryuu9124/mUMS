@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo6.DashboardController"
+            style="-fx-background-color: #f0f2f5;">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #1a237e; -fx-padding: 20;">
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@logo.png"/>
+            </ImageView>
+
+            <Label text="Dashboard" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold; -fx-padding: 0 0 20 0;"/>
+
+            <VBox spacing="5">
+                <Button text="Home" styleClass="nav-button"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;"/>
+                <Button text="Students" styleClass="nav-button "
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;"/>
+                <Button text="Teachers" styleClass="nav-button"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;"/>
+                <Button text="Courses" styleClass="nav-button"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;"/>
+                <Button text="Settings" styleClass="nav-button"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #ff1744; -fx-text-fill: white; -fx-min-width: 150;"/>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeText" text="Welcome back!" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField promptText="Search students..." prefWidth="250"
+                           style="-fx-background-radius: 20; -fx-padding: 8 15;"/>
+            </HBox>
+
+            <!-- Stats Cards -->
+            <HBox spacing="20">
+                <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;
+                      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <Label text="Total Students" style="-fx-text-fill: #666;"/>
+                    <Label fx:id="totalStudentsLabel" text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+
+                <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;
+                      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <Label text="Active Courses" style="-fx-text-fill: #666;"/>
+                    <Label fx:id="totalCoursesLabel" text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+
+                <VBox styleClass="stat-card" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;
+                      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <Label text="Total Teachers" style="-fx-text-fill: #666;"/>
+                    <Label fx:id="totalTeachersLabel" text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Students List -->
+            <VBox VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 10;
+                  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <Label text="Students" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-padding: 20 20 10 20;"/>
+                <ListView fx:id="studentsListView" VBox.vgrow="ALWAYS" style="-fx-background-insets: 0;">
+                    <VBox.margin>
+                        <Insets bottom="10" left="10" right="10"/>
+                    </VBox.margin>
+                </ListView>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

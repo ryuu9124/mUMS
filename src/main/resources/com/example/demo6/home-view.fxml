@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox fx:controller="com.example.demo6.HomeController"
+      spacing="15"
+      xmlns:fx="http://javafx.com/fxml">
+
+    <Label text="Welcome to School Management System" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+    <Label text="Select an option from the sidebar to manage your school data." style="-fx-font-size: 14;"/>
+
+    <!-- You can add recent activities or quick stats here -->
+    <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #f8f9fa; -fx-background-radius: 5;">
+        <Label text="Recent Activities" style="-fx-font-weight: bold;"/>
+        <ListView fx:id="recentActivitiesListView" VBox.vgrow="ALWAYS" prefHeight="200"/>
+    </VBox>
+</VBox>

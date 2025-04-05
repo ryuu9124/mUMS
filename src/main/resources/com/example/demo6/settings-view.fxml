@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="com.example.demo6.SettingsController"
+      spacing="15"
+      xmlns:fx="http://javafx.com/fxml">
+
+    <Label text="System Settings" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <!-- Settings list -->
+    <ListView fx:id="settingsListView" VBox.vgrow="ALWAYS"/>
+</VBox>

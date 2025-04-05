@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="com.example.demo6.TeachersController"
+      spacing="15"
+      xmlns:fx="http://javafx.com/fxml">
+
+    <!-- Action buttons -->
+    <HBox spacing="10">
+        <Button text="Add New Teacher" onAction="#handleAddTeacher"/>
+        <Button text="Refresh" onAction="#loadTeachers"/>
+    </HBox>
+
+    <!-- Teacher list -->
+    <ListView fx:id="teacherListView" VBox.vgrow="ALWAYS"/>
+</VBox>

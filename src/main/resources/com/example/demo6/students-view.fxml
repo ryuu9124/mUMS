@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.demo6.StudentsController">
+
+    <!-- Action buttons -->
+    <HBox spacing="10">
+        <Button onAction="#handleAddStudent" text="Add New Student" />
+        <Button onAction="#loadStudents" text="Refresh" />
+      <Button fx:id="DeleteButton" onAction="#loadStudents" text="Delete Students" />
+      <Button fx:id="EditStudent" onAction="#loadStudents" text="Edit Student" />
+    </HBox>
+
+    <!-- Student list -->
+    <ListView fx:id="studentListView" prefHeight="400.0" prefWidth="451.0" VBox.vgrow="ALWAYS" />
+</VBox>

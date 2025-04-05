@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo6.AddCourseTeacherController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 20;">
+
+    <Label text="Add New Course" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="courseNameField" promptText="Course Name" prefWidth="300"/>
+
+    <ComboBox fx:id="teacherComboBox" promptText="Select Teacher" prefWidth="300"/>
+
+    <HBox spacing="10">
+        <Button text="Add Course" onAction="#addCourse" prefWidth="120"/>
+        <Button text="Cancel" onAction="#cancel" prefWidth="120"/>
+    </HBox>
+
+</VBox>

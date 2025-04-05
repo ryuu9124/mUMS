@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: linear-gradient(to bottom right, #009688, #00796B);"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo6.RegistrationController">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10">
+        <Text text="Create Account" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-fill: white;"/>
+        <Text text="Please fill in your information" style="-fx-font-size: 16; -fx-fill: white; -fx-opacity: 0.8;"/>
+    </VBox>
+
+    <!-- Form Container -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);"
+          maxWidth="500" spacing="25">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <!-- Profile Picture Section -->
+        <VBox alignment="CENTER" spacing="10">
+            <StackPane>
+                <Circle fx:id="profileCircle" radius="50" fill="lightgray"/>
+                <ImageView fx:id="profileImageView" fitHeight="100" fitWidth="100" preserveRatio="true"/>
+            </StackPane>
+            <Button fx:id="uploadButton" text="Upload Photo" onAction="#handleImageUpload"
+                    style="-fx-background-color: transparent; -fx-text-fill: #009688; -fx-border-color: #009688; -fx-border-radius: 20; -fx-padding: 8 16;"/>
+        </VBox>
+
+        <!-- Form Fields -->
+        <HBox spacing="15">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="First Name" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <TextField fx:id="firstNameField" promptText="Enter your first name"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Last Name" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <TextField fx:id="lastNameField" promptText="Enter your last name"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+            </VBox>
+        </HBox>
+
+        <VBox spacing="5">
+            <Label text="Email" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+            <TextField fx:id="emailField" promptText="Enter your email"
+                       style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+        </VBox>
+
+        <HBox spacing="15">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Password" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password"
+                               style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Confirm Password" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password"
+                               style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="15">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Birthday" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <DatePicker fx:id="birthdayPicker" promptText="Select your birthday"
+                            style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1;"/>
+            </VBox>
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="Address" style="-fx-text-fill: #333333; -fx-font-weight: bold;"/>
+                <TextField fx:id="addressField" promptText="Enter your address"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-padding: 12;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Buttons -->
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel"
+                    style="-fx-background-color: transparent; -fx-text-fill: #f44336; -fx-border-color: #f44336; -fx-border-radius: 20; -fx-padding: 12 24;"/>
+            <Button fx:id="registerButton" text="Register" onAction="#handleRegister"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 12 24;"/>
+        </HBox>
+    </VBox>
+</VBox>

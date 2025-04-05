@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.StudentDashboardController">
+
+    <!-- Left Sidebar Navigation -->
+    <left>
+        <VBox spacing="5" style="-fx-background-color: #2c3e50; -fx-padding: 10;">
+            <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;" text="Student Portal" />
+            <Separator />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Home" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="My Courses" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Grades" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Schedule" />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Resources" />
+            <Separator />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Settings" />
+            <Separator />
+            <Button style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-min-width: 150;" text="Logout" />
+            <VBox.margin>
+                <Insets top="20" />
+            </VBox.margin>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="welcomeTexts" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Welcome, Student!" />
+            </HBox>
+
+            <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text="Dashboard Overview" />
+
+            <!-- Dashboard statistics (visible to student) -->
+            <HBox spacing="20">
+                <VBox styleClass="stat-card" style="-fx-background-color: #e3f2fd; -fx-padding: 15; -fx-background-radius: 5;">
+                    <Label text="Courses Enrolled" style="-fx-text-fill: #1565c0; -fx-font-weight: bold;"/>
+                    <Label text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+                <VBox styleClass="stat-card" style="-fx-background-color: #e8f5e9; -fx-padding: 15; -fx-background-radius: 5;">
+                    <Label text="Completed Courses" style="-fx-text-fill: #2e7d32; -fx-font-weight: bold;"/>
+                    <Label text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+                <VBox styleClass="stat-card" style="-fx-background-color: #fff3e0; -fx-padding: 15; -fx-background-radius: 5;">
+                    <Label text="Upcoming Exams" style="-fx-text-fill: #e65100; -fx-font-weight: bold;"/>
+                    <Label text="0" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Content Stack Pane - swaps between different content views -->
+            <StackPane VBox.vgrow="ALWAYS">
+                <Label text="Home Page Content" />
+                <Label text="My Courses Page Content" />
+                <Label text="Grades Page Content" />
+                <Label text="Schedule Page Content" />
+                <Label text="Resources Page Content" />
+                <Label text="Settings Page Content" />
+            </StackPane>
+        </VBox>
+    </center>
+</BorderPane>
