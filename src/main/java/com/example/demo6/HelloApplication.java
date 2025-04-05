@@ -13,8 +13,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 700);
         stage.setTitle("Login");
         stage.initStyle(StageStyle.DECORATED);
-        scene.getStylesheets().add(getClass().
-                getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
