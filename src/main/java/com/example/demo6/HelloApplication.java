@@ -16,7 +16,6 @@ public class HelloApplication extends Application {
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
-
     }
     public static void main(String[] args) {
         launch();
